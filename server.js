@@ -5,6 +5,7 @@ const path            = require('path');
 const bodyParser      = require('body-parser');
 const cookieParser    = require('cookie-parser');
 const methodOverride  = require('method-override');
+const session         = require('express-session');
 
 // set up Routes
 const homeRoute       = require('./routes/home');
@@ -38,7 +39,9 @@ app.use(session({
   secret: SECRET
 }));
 
-app.listen(port, console.log('Server is listening on port ', PORT));
+app.listen(PORT, console.log('Server is listening on port ', PORT));
 
 // set static assets path
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', homeRoute);
