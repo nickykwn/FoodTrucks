@@ -9,6 +9,8 @@ const session         = require('express-session');
 
 // set up Routes
 const homeRoute       = require('./routes/home');
+const mapRoute        = require('./routes/map');
+const searchRoute     = require('./routes/search');
 
 const app             = express();
 const PORT            = process.argv[2] || process.env.PORT || 3000;
@@ -45,3 +47,5 @@ app.listen(PORT, console.log('Server is listening on port ', PORT));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRoute);
+app.use('/map', mapRoute);
+// app.use('/search', searchRoute);

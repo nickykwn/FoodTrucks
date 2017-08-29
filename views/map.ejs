@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    #map {
+      width: 100%;
+      height: 400px;
+      background-color: grey;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to San Francisco</h1>
+  <div id="map"></div>
+</body>
+  <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa3hX_qNfEwTONvnG2A9esIc5lWZnMd6M&callback=initMap">
+    </script>
+</html>
