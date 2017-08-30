@@ -1,5 +1,8 @@
 # SF FoodTrucks
   This is app to locate food trucks nearby a specific location giving the user an option to the range in miles they wish to travel. 
+
+# Deployed on Heroku
+  [sffoodtrucklocator](https://sffoodtrucklocator.herokuapp.com/)
   
 # Technology Used
 * Node
