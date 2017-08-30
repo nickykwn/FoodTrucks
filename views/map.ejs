@@ -5,10 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <link rel="stylesheet" href="/css/main.css">
+  <script src="js/application.js" type="text/javascript" charset="utf-8" async defer></script>
   <style>
     #map {
-      width: 100%;
-      height: 400px;
+      width: 80%;
+      height: 500px;
       background-color: grey;
     }
   </style>
@@ -16,16 +17,23 @@
 <body>
   <h1>Welcome to San Francisco</h1>
   <div id="map"></div>
-</body>
+  <h3>To begin search for local food trucks hit the button below</h3>
+  <input placeholder="Enter Address" id="address"/>
+  <input placeholder="Mile Range" id="milesrange"/>
+  <input type="submit" id="submit"/>
+  </body>
   <script>
+      // https://maps.googleapis.com/maps/api/geocode/json?&address=san%20francisco
+      // google Maps API
       function initMap() {
-        var SanFran = {lat: -25.363, lng: 131.044};
+        var SanFran = new google.maps.LatLng(37.77493, -122.419416);
+        var minZoomLevel = 12;
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
+          zoom: minZoomLevel,
+          center: SanFran
         });
         var marker = new google.maps.Marker({
-          position: uluru,
+          position: SanFran,
           map: map
         });
       }

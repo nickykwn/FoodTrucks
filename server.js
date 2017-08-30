@@ -10,7 +10,7 @@ const session         = require('express-session');
 // set up Routes
 const homeRoute       = require('./routes/home');
 const mapRoute        = require('./routes/map');
-const searchRoute     = require('./routes/search');
+const foodRoute       = require('./routes/food');
 
 const app             = express();
 const PORT            = process.argv[2] || process.env.PORT || 3000;
@@ -48,4 +48,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRoute);
 app.use('/map', mapRoute);
-// app.use('/search', searchRoute);
+app.use('/food', foodRoute);
